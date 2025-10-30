@@ -106,70 +106,45 @@
 </section>
 
 <div class="container pt-3 pb-4">
-  <ul class="nav nav-tabs justify-content-center" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#live">Podgląd</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">Historia</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#manage">Zarządzanie</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#presentation">Prezentacja</button></li>
-  </ul>
+<!--  <ul class="nav nav-tabs justify-content-center" role="tablist">-->
+<!--    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#live">Podgląd</button></li>-->
+<!--    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">Historia</button></li>-->
+<!--    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#manage">Zarządzanie</button></li>-->
+<!--    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#presentation">Prezentacja</button></li>-->
+<!--  </ul>-->
 
   <div class="tab-content">
-    <!-- Podgląd -->
-<!--    <div class="tab-pane fade show active" id="live">-->
+<!--    <div class="tab-pane fade" id="live">-->
 <!--      <h5 class="section-title">Podgląd na żywo z kamery</h5>-->
-<!--      <img src="/video" class="img-fluid rounded shadow border"-->
-<!--      onerror="showError()"/>-->
-<!--    </div>-->
-    <div class="tab-pane fade show active" id="live">
-      <h5 class="section-title">Podgląd na żywo z kamery</h5>
-      <img src="/video" class="img-fluid rounded shadow border">
-      <div id="live-detection-status" class="text-center fw-bold mt-3" style="font-size: 1.2rem; color: gray;">
-        Przetwarzanie...
-      </div>
-    </div>
-
-    <!-- Historia -->
-    <div class="tab-pane fade" id="history">
-      <h5 class="section-title">Historia</h5>
-      <table class="table table-striped table-hover align-middle">
-        <thead class="table-light">
-          <tr><th>Tablica</th><th>Status</th><th>Godzina</th></tr>
-        </thead>
-        <tbody id="history-table"></tbody>
-      </table>
-    </div>
-
-    <!-- Zarządzanie -->
-    <div class="tab-pane fade" id="manage">
-      <h5 class="section-title">Zarządzaj dostępem</h5>
-      <div class="mb-3">
-        <label class="form-label">Dodaj nową tablicę</label>
-        <div class="input-group">
-          <input type="text" id="new-plate" class="form-control" placeholder="Np. WWA1234">
-          <button class="btn btn-success" onclick="addPlate()"><i class="fas fa-plus-circle me-1"></i>Dodaj</button>
-        </div>
-      </div>
-      <ul class="list-group" id="plate-list"></ul>
-    </div>
-
-    <!-- Prezentacja -->
-<!--  <div class="tab-pane fade" id="presentation">-->
-<!--    <h5 class="section-title">Prezentacja działania na gotowym nagraniu</h5>-->
-<!--    <div class="mb-3">-->
-<!--      <div class="mb-3">-->
-<!--        <div class="d-flex justify-content-center mb-3 gap-2">-->
-<!--          <button class="btn btn-custom-detect" onclick="startVideo()">Start</button>-->
-<!--          <button class="btn btn-custom-detect" onclick="restartVideo()">Odtwórz od początku</button>-->
-<!--        </div>-->
-<!--        <img id="presentation-video" class="w-100 rounded shadow" />-->
+<!--      <img src="/video" class="img-fluid rounded shadow border">-->
+<!--      <div id="live-detection-status" class="text-center fw-bold mt-3" style="font-size: 1.2rem; color: gray;">-->
+<!--        Przetwarzanie...-->
 <!--      </div>-->
 <!--    </div>-->
-<!--    <div id="detection-status" class="text-center fw-bold mt-3" style="font-size: 1.2rem; color: gray;">-->
-<!--      Przetwarzanie...-->
+
+<!--    <div class="tab-pane fade" id="history">-->
+<!--      <h5 class="section-title">Historia</h5>-->
+<!--      <table class="table table-striped table-hover align-middle">-->
+<!--        <thead class="table-light">-->
+<!--          <tr><th>Tablica</th><th>Status</th><th>Godzina</th></tr>-->
+<!--        </thead>-->
+<!--        <tbody id="history-table"></tbody>-->
+<!--      </table>-->
 <!--    </div>-->
-<!--    <div id="presentation-results" class="mt-4"></div>-->
-<!--  </div>-->
-    <div class="tab-pane fade" id="presentation">
+
+<!--    <div class="tab-pane fade" id="manage">-->
+<!--      <h5 class="section-title">Zarządzaj dostępem</h5>-->
+<!--      <div class="mb-3">-->
+<!--        <label class="form-label">Dodaj nową tablicę</label>-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" id="new-plate" class="form-control" placeholder="Np. WWA1234">-->
+<!--          <button class="btn btn-success" onclick="addPlate()"><i class="fas fa-plus-circle me-1"></i>Dodaj</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <ul class="list-group" id="plate-list"></ul>-->
+<!--    </div>-->
+
+    <div class="tab-pane fade show active" id="presentation">
   <h5 class="section-title">Prezentacja działania na gotowym nagraniu</h5>
 
   <!-- Przycisk do wyboru filmu -->
@@ -179,6 +154,13 @@
     <button class="btn btn-custom-detect" onclick="loadPresentationVideo('amcia4.mp4')">Film 3</button>
     <button class="btn btn-custom-detect" onclick="loadPresentationVideo('madzia2.mp4')">Film 4</button>
     <button class="btn btn-custom-detect" onclick="loadPresentationVideo('amcia.mp4')">Film 5</button>
+  </div>
+  <!-- Przycisk do wyboru zdjęcia -->
+  <div class="mb-3 d-flex justify-content-center gap-2">
+    <button class="btn btn-custom-detect" onclick="loadPresentationPhoto('car25.jpg')">Zdjęcie 1</button>
+    <button class="btn btn-custom-detect" onclick="loadPresentationPhoto('car52.jpg')">Zdjęcie 2</button>
+    <button class="btn btn-custom-detect" onclick="loadPresentationPhoto('car38.jpg')">Zdjęcie 3</button>
+    <button class="btn btn-custom-detect" onclick="loadPresentationPhoto('car109.jpg')">Zdjęcie 4</button>
   </div>
 
   <!-- Wideo jako MJPEG stream -->
@@ -201,7 +183,6 @@
   </div>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   function fetchHistory() {
@@ -213,82 +194,10 @@
           <td>${item.plate_number}</td>
           <td><span class="badge ${item.status === 'GRANTED' ? 'bg-success' : 'bg-danger'}">${item.status}</span></td>
           <td>${new Date(item.timestamp).toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' })}</td>
-
-
-
         </tr>`;
         table.innerHTML += row;
       });
     });
-  }
-
-  function fetchPlates() {
-    fetch('/plates').then(res => res.json()).then(data => {
-      const list = document.getElementById('plate-list');
-      list.innerHTML = '';
-      data.forEach(plate => {
-        const item = document.createElement('li');
-        item.className = 'list-group-item d-flex justify-content-between align-items-center';
-        item.innerHTML = `${plate} <button class="btn btn-outline-danger btn-sm" onclick="deletePlate('${plate}')"><i class="fas fa-trash"></i></button>`;
-        list.appendChild(item);
-      });
-    });
-  }
-
-  function addPlate() {
-    const plate = document.getElementById('new-plate').value.trim().toUpperCase();
-    if (!plate) return;
-    fetch('/grant_access', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ plate_number: plate })
-    }).then(() => {
-      document.getElementById('new-plate').value = '';
-      fetchPlates();
-    });
-  }
-
-  function deletePlate(plate) {
-    fetch('/delete_plate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ plate_number: plate })
-    }).then(fetchPlates);
-  }
-
-  document.querySelector('[data-bs-target="#history"]').addEventListener('click', fetchHistory);
-  document.querySelector('[data-bs-target="#manage"]').addEventListener('click', fetchPlates);
-</script>
-<script>
-  async function runDetection() {
-    const resultsDiv = document.getElementById('presentation-results');
-    resultsDiv.textContent = "Trwa wykrywanie...";
-
-    try {
-      const videoRes = await fetch('/current_video');
-      const videoData = await videoRes.json();
-      const currentVideo = videoData.filename;
-
-      const response = await fetch('/run_detection', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ video_file: currentVideo })
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        if (data.plate_number) {
-          resultsDiv.textContent = `Wykryta tablica: ${data.plate_number} (pewność: ${(data.confidence * 100).toFixed(1)}%)`;
-        } else {
-          resultsDiv.textContent = data.message || "Nie wykryto tablicy.";
-        }
-      } else {
-        resultsDiv.textContent = `Błąd: ${data.error || 'Nieznany błąd'}`;
-      }
-    } catch (err) {
-      resultsDiv.textContent = "Błąd połączenia z serwerem.";
-      console.error(err);
-    }
   }
 </script>
 <script>
@@ -314,7 +223,21 @@ function showError() {
 }
 </script>
 
-<!--</script>-->
+<script>
+function loadPresentationPhoto(filename) {
+  const videoElement = document.getElementById("presentation-video");
+  const status = document.getElementById("detection-status");
+
+  videoElement.src = `/video_with_detection?video=../photos/${filename}&reset=true&t=${Date.now()}`;
+  status.innerText = "Przetwarzanie...";
+  status.style.color = "gray";
+
+  lastPlate = null;
+  lastStatus = null;
+}
+</script>
+
+
 <script>
   let lastPlate = null;
   let lastStatus = null;
@@ -328,33 +251,31 @@ function showError() {
         if (!data || !data.plate) return;
 
         let extraInfo = "";
-        if (data.brand || data.color) {
-          extraInfo = " | ";
-          if (data.brand) {
-            extraInfo += `marka: ${data.brand}`;
-          }
-          if (data.color) {
-            if (data.brand) extraInfo += ", ";
-            extraInfo += `kolor: ${data.color}`;
-          }
+        if (data.color) {
+          extraInfo = ` | kolor: ${data.color}`;
         }
+        // if (data.brand) {
+        //   extraInfo += `, marka: ${data.brand}`;
+        // }
 
         let statusText = "";
         let statusColor = "";
 
-        if (data.status === "GRANTED") {
-          statusText = `✅ ${data.plate} — dostęp przyznany${extraInfo}`;
-          statusColor = "green";
-          if (lastStatus !== "GRANTED") showToast("Przyznano dostęp");
-        } else if (data.status === "DENIED") {
-          statusText = `❌ ${data.plate} — brak dostępu${extraInfo}`;
-          statusColor = "red";
-        } else {
-          statusText = "Przetwarzanie...";
-          statusColor = "gray";
-        }
+        // if (data.status === "GRANTED") {
+        //   statusText = `✅ ${data.plate} — dostęp przyznany${extraInfo}`;
+        //   statusColor = "green";
+        //   if (lastStatus !== "GRANTED") showToast("Przyznano dostęp");
+        // } else if (data.status === "DENIED") {
+        //   statusText = `❌ ${data.plate} — brak dostępu${extraInfo}`;
+        //   statusColor = "red";
+        // } else {
+        //   statusText = "Przetwarzanie...";
+        //   statusColor = "gray";
+        // }
 
-        // Aktualizacja obu zakładek
+        statusText = `${data.plate}${extraInfo}`;
+        statusColor = "gray";
+
         if (statusEl) {
           statusEl.innerText = statusText;
           statusEl.style.color = statusColor;
